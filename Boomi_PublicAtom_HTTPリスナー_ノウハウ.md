@@ -65,8 +65,9 @@ Boomi の Web Services Server（Listen）でシンプルなHTTP APIエンドポ�
 ## 3. オペレーションのパス設計（Object 欄に注意）
 
 - **Simple URL パスは Object 欄の値で変わる。** ここが今回の最大の落とし穴だった。
+　　Object空はNG
   - Object = `test` → パス `/ws/simple/getTest`
-  - Object = 空 → パス `/ws/simple/get`
+  ng Object = 空 → パス `/ws/simple/get`
 - **呼び出しURL = Base + Simple URLパス。**
   - 例: `https://c01-jp.integrate-test.boomi.com/ws/simple/get`
 - パスは**画面の「シンプルURLパス」欄に表示される文字列をそのままコピー**するのが確実（綴り・大文字小文字ミスを防ぐ）。
